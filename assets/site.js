@@ -681,6 +681,8 @@
       if (canHover) {   // a tap on a touch screen only opens the panel; it is never hover
         var el = lead(d).closest('.card, .fcard') || lead(d);
         el.addEventListener('pointerenter', function (e) { if (e.pointerType !== 'touch' && !still(e)) hoverOn(d); });
+        // an entry ignored because the page scrolled under a still pointer is taken up by the pointer's first real move
+        el.addEventListener('pointermove', function (e) { if (e.pointerType !== 'touch' && hovered !== d && !still(e)) hoverOn(d); });
         el.addEventListener('pointerleave', function (e) { if (e.pointerType !== 'touch') hoverOff(d); });
         el.addEventListener('focusin', function () { if (el.matches(':focus-visible') || el.querySelector(':focus-visible')) hoverOn(d); });
         el.addEventListener('focusout', function (e) { if (!el.contains(e.relatedTarget)) hoverOff(d); });
