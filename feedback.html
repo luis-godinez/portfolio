@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Annotation · Luis Godinez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css?v=dc55f7992e">
+<script>(function(){var t=null,ok=/^(light|dark|xray)$/,q=/[?&]theme=(light|dark|xray)\b/.exec(location.search);if(q)t=q[1];else{try{t=localStorage.getItem("theme")}catch(e){}}if(!ok.test(t))t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t;if(/[?&]embed\b/.test(location.search))document.documentElement.classList.add("embed")})()</script>
+
+</head>
+<body class="page">
+
+<header class="nav"><div class="wrap"><a class="name" href="index.html">LUIS GODINEZ</a><nav aria-label="Sections"><a href="index.html#work">Case studies</a><a href="index.html#process">Process</a><a href="index.html#contact">Contact</a></nav><div class="theme-pick"><button type="button" class="tp-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Theme"><span class="tp-cur">System</span></button><ul class="tp-list" role="listbox" aria-label="Theme" tabindex="-1" hidden><li role="option" data-v="system" aria-selected="false">System</li><li class="tp-sep" role="separator"></li><li role="option" data-v="light" aria-selected="false">Light</li><li role="option" data-v="dark" aria-selected="false">Dark</li><li role="option" data-v="xray" aria-selected="false">X-ray</li></ul></div></div></header>
+
+<main>
+<section class="page-hero themed">
+  <div class="wrap">
+    <div>
+      <a class="back" href="index.html#apple">← Apple</a>
+      <span class="ctx"><b>Apple</b> · Special Projects · Senior Engineering Program Manager</span>
+      <h1 class="pname">Data Annotation</h1>
+      <p class="pline">An annotation tool for tagging a moment as it happens, by button, voice or the visualization tool, linked to what the device recorded. I built it from scratch.</p>
+      <div class="fig"><strong>16</strong><span>root causes traced from one 30-minute feedback session</span></div>
+    </div>
+    <div><img class="only-light" src="img/deck-note-light.svg" alt="Drawing: a 3 by 5 button deck. Keys are pressed, and each note pins onto a running timeline of device data at the moment the playhead passes"><img class="only-dark" src="img/deck-note.svg" alt="Drawing: a 3 by 5 button deck. Keys are pressed, and each note pins onto a running timeline of device data at the moment the playhead passes"><img class="only-xray" src="img/deck-note-xray.svg" alt="Drawing: a 3 by 5 button deck. Keys are pressed, and each note pins onto a running timeline of device data at the moment the playhead passes"></div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="step">
+    <div class="k"><b>Understand</b><span class="mono">The people</span></div>
+    <div class="txt">
+      <p>People across the program had moments worth noting: engineers, QA, designers, data-collection operators and executives. A note like “something felt weird around then” meant scrubbing logs for five minutes or an hour to find the moment.</p>
+      <p>I had built this loop once before, for adversarial testing of a generative feature ahead of its launch. Operators were briefed in the app, ran the test, and filed findings in the same place, straight into the collection’s data pipeline.</p>
+    </div>
+    <div class="vis"></div>
+  </section>
+
+  <section class="step">
+    <div class="k"><b>Define</b><span class="mono">The problem</span></div>
+    <div class="txt"><p>Capturing a note had to take one press, without stopping the work, and the fields had to keep up with what people wanted to record.</p></div>
+    <div class="vis"></div>
+  </section>
+
+  <section class="step">
+    <div class="k"><b>Prototype</b><span class="mono">The build</span></div>
+    <div class="txt">
+      <p>I built the first version as a quick app for an Elgato Stream Deck, the 15-key button deck streamers use. Requests arrived one after another: timestamps with notes, then dictation, then scripts that attach diagnostics and recordings on their own.</p>
+      <p>Each one had to work in two places: the Stream Deck, for capture in the moment, and a Mac app for setup and for editing with mouse and keyboard.</p>
+      <p>The fields live in schemas served from a server, so anyone can create or update one and use it at their desk right away.</p>
+      <div class="loopback"><b>Back to Define</b>A partner team needed more than a flat list of categories. Rating quality on a 1–5 scale is one question; saying which part felt wrong is another. Schemas became trees, so each answer leads to the next relevant question, and the team built parts of it with me through their own pull requests.</div>
+    </div>
+    <div class="vis"></div>
+  </section>
+
+  <section class="step">
+    <div class="k"><b>Test</b><span class="mono">With users</span></div>
+    <div class="txt">
+      <p>In one 30-minute session, a human-interface designer dictated issues as they appeared. Every note arrived with its context. That let a teammate group the feedback into six patterns and trace them to 16 root causes.</p>
+      <p class="quote">&ldquo;This is such a great, natural way to provide feedback&hellip; being able to dictate issues as they appeared.&rdquo;<span>Human-interface designer</span></p>
+      <div class="loopback"><b>Back to Prototype</b>In a lab session, the device answered the dictation meant for the note. Dictation now mutes the device before the microphone opens, and each press captures just the recordings around that moment instead of uploading everything.</div>
+    </div>
+    <div class="vis"></div>
+  </section>
+
+  <section class="step last">
+    <div class="k"><b>Ship</b><span class="mono">The outcome</span></div>
+    <div class="txt">
+      <p>Each annotation is linked to the device data recorded around it, so it does two jobs: labeled data for training and tuning models, and a trail engineers follow to the exact time, symptom and cause. A partner team moved its user feedback onto the same path, and a design team took five decks back to its studio.</p>
+      <p>I grew it from that quick app, through refactors, into a shared annotation kit and interface. It now serves several products, the visualization tool among them, so annotation works the same live or in a recording. Releases are signed and update automatically.</p>
+    </div>
+    <div class="vis"></div>
+  </section>
+
+  <nav class="nextproj" aria-label="More case studies"><a href="platform.html"><span>Previous case study</span>Data Visualization</a><a href="luna.html" style="text-align:right"><span>Next case study</span>Instrument Panel Keyboard</a></nav>
+</div>
+</main>
+<script src="assets/site.js?v=e0057d1b64"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Visualization · Luis Godinez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css?v=dc55f7992e">
+<script>(function(){var t=null,ok=/^(light|dark|xray)$/,q=/[?&]theme=(light|dark|xray)\b/.exec(location.search);if(q)t=q[1];else{try{t=localStorage.getItem("theme")}catch(e){}}if(!ok.test(t))t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t;if(/[?&]embed\b/.test(location.search))document.documentElement.classList.add("embed")})()</script>
+
+</head>
+<body class="page">
+
+<header class="nav"><div class="wrap"><a class="name" href="index.html">LUIS GODINEZ</a><nav aria-label="Sections"><a href="index.html#work">Case studies</a><a href="index.html#process">Process</a><a href="index.html#contact">Contact</a></nav><div class="theme-pick"><button type="button" class="tp-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Theme"><span class="tp-cur">System</span></button><ul class="tp-list" role="listbox" aria-label="Theme" tabindex="-1" hidden><li role="option" data-v="system" aria-selected="false">System</li><li class="tp-sep" role="separator"></li><li role="option" data-v="light" aria-selected="false">Light</li><li role="option" data-v="dark" aria-selected="false">Dark</li><li role="option" data-v="xray" aria-selected="false">X-ray</li></ul></div></div></header>
+
+<main>
+<section class="page-hero themed">
+  <div class="wrap">
+    <div>
+      <a class="back" href="index.html#apple">← Apple</a>
+      <span class="ctx"><b>Apple</b> · Special Projects · Senior Engineering Program Manager</span>
+      <h1 class="pname">Data Visualization</h1>
+      <p class="pline">The organization’s primary tool for seeing what a robotic system perceived and did, rebuilt around how its engineers debug.</p><div class="fig"><strong>100+</strong><span>end users across software and partner teams</span></div>
+      
+    </div>
+    <div style="aspect-ratio:16/10"><div class="illus"><canvas data-illus="platform" data-hold="40" aria-label="Illustration with synthetic data: a camera’s field of view sweeps a room and builds a 3D point cloud that fades as it ages, two people walk through the room, and whoever is speaking gives off sound rings, beside time-synced signals that share one playhead"></canvas></div></div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="step">
+    <div class="k"><b>Understand</b><span class="mono">The people</span></div>
+    <div class="txt"><p>I came to this tool as one of its users, on a team that depended on it daily and kept hitting its limits. Software and hardware engineers needed to see what the system perceived, decided and did, in sync, both live and from recordings.</p></div>
+    <div class="vis"></div>
+  </section>
+
+  <section class="step">
+    <div class="k"><b>Define</b><span class="mono">The problem</span></div>
+    <div class="txt"><p>The tool had to deliver what was committed, on a codebase built up a piece at a time, without disrupting the teams who used it every day.</p></div>
+    <div class="vis"></div>
+  </section>
+
+  <section class="step">
+    <div class="k"><b>Prototype</b><span class="mono">The build</span></div>
+    <div class="txt">
+      <p>I started with a product requirements document and an audit of the tool as built: the four surfaces everything else hung on, what each one owned, and 14 inconsistencies between them, each flagged for cleanup. The planned path wasn’t going to deliver what was committed, so I took on the engineering myself.</p>
+      <p>I build through agentic development, which let me work in frameworks new to me. I rebuilt the tool end to end around one synchronized view: telemetry, plots, audio and video kept in sync, and 3D views of sensor data, all on one timeline, live or recorded.</p>
+      <p>Versioned releases with unit, integration and UI tests kept daily users unaffected while the tool changed underneath them.</p>
+    </div>
+    <div class="vis wide"><figure><img class="only-light" src="img/platform-arch-light.svg" alt="Architecture, simplified: recordings and live device data are decoded off the main thread into one shared snapshot per tick, which every panel renders; one playback clock drives the playhead, audio and video, and seeks return to the clock on their own path" style="aspect-ratio:auto;object-fit:contain"><img class="only-dark" src="img/platform-arch.svg" alt="Architecture, simplified: recordings and live device data are decoded off the main thread into one shared snapshot per tick, which every panel renders; one playback clock drives the playhead, audio and video, and seeks return to the clock on their own path" style="aspect-ratio:auto;object-fit:contain"><img class="only-xray" src="img/platform-arch-xray.svg" alt="Architecture, simplified: recordings and live device data are decoded off the main thread into one shared snapshot per tick, which every panel renders; one playback clock drives the playhead, audio and video, and seeks return to the clock on their own path" style="aspect-ratio:auto;object-fit:contain"><figcaption>Simplified, with generic names</figcaption></figure></div>
+  </section>
+
+  <section class="step">
+    <div class="k"><b>Test</b><span class="mono">In daily use</span></div>
+    <div class="txt">
+      <p>I ran lunch talks and demo days so teams knew what the tool could do, and changed direction more than once on their feedback.</p>
+      <div class="loopback"><b>Back to Prototype</b>A 3D view of depth data began as a prototype. Building it led me to rewrite the tool’s whole 3D viewer on a newer rendering framework, replacing the old 3D panel. The depth view itself didn’t ship, because the team I first built it for passed on it. Another team had seen a preview in those first days, and later asked whether it had shipped or could. The new viewer was already in place, so I drew the depth data against its source, and it shipped in half an hour. It replaced the custom scripts they had used to turn the data into flat images and plots, which they then had to work out in 3D themselves.</div>
+    </div>
+    <div class="vis"></div>
+  </section>
+
+  <section class="step last">
+    <div class="k"><b>Ship</b><span class="mono">The outcome</span></div>
+    <div class="txt"><p>More than 100 people across software and partner teams use it daily. Every change went through review by the codebase owner and senior engineers.</p></div>
+    <div class="vis"></div>
+  </section>
+
+  <section class="step">
+    <div class="k"><b>What I’d do differently</b></div>
+    <div class="txt"><p>Plan for scale from the start. I moved from chat-based AI development to agent-based development with skills, subagents and orchestration. Several tools that started as small experiments grew into platforms other teams depend on, and had to be restructured once they outgrew their first design. Next time I’d set the architecture and review practice up front, and spend compute more deliberately.</p></div>
+    <div class="vis"></div>
+  </section>
+
+  <nav class="nextproj" aria-label="More case studies"><a href="loon.html"><span>Previous case study</span>Air Traffic Website</a><a href="feedback.html" style="text-align:right"><span>Next case study</span>Data Annotation</a></nav>
+</div>
+</main>
+<script src="assets/site.js?v=e0057d1b64"></script>
+</body>
+</html>

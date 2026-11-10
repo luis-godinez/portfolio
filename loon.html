@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Air Traffic Website · Luis Godinez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css?v=dc55f7992e">
+<script>(function(){var t=null,ok=/^(light|dark|xray)$/,q=/[?&]theme=(light|dark|xray)\b/.exec(location.search);if(q)t=q[1];else{try{t=localStorage.getItem("theme")}catch(e){}}if(!ok.test(t))t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t;if(/[?&]embed\b/.test(location.search))document.documentElement.classList.add("embed")})()</script>
+
+</head>
+<body class="page">
+
+<header class="nav"><div class="wrap"><a class="name" href="index.html">LUIS GODINEZ</a><nav aria-label="Sections"><a href="index.html#work">Case studies</a><a href="index.html#process">Process</a><a href="index.html#contact">Contact</a></nav><div class="theme-pick"><button type="button" class="tp-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Theme"><span class="tp-cur">System</span></button><ul class="tp-list" role="listbox" aria-label="Theme" tabindex="-1" hidden><li role="option" data-v="system" aria-selected="false">System</li><li class="tp-sep" role="separator"></li><li role="option" data-v="light" aria-selected="false">Light</li><li role="option" data-v="dark" aria-selected="false">Dark</li><li role="option" data-v="xray" aria-selected="false">X-ray</li></ul></div></div></header>
+
+<main>
+<section class="page-hero themed">
+  <div class="wrap">
+    <div>
+      <a class="back" href="index.html#loon">← Loon</a>
+      <span class="ctx"><b>Loon</b> · Mission Control · Product Manager</span>
+      <h1 class="pname">Air Traffic Website</h1>
+      <p class="pline">An air traffic website that shows controllers a balloon fleet sailing the winds through their airspace, in the conventions they already work in. I designed and built it.</p>
+      <div class="fig"><strong>11</strong><span>countries approved overflight across South America</span></div>
+    </div>
+    <div><img class="only-light" src="img/loon-map-card-light.svg" alt="Recreation with synthetic data of the air traffic map: balloons hold their positions by flying slow loops, headings turning and leading lines changing with speed, while the selected balloon sails along its track"><img class="only-dark" src="img/loon-map-card.svg" alt="Recreation with synthetic data of the air traffic map: balloons hold their positions by flying slow loops, headings turning and leading lines changing with speed, while the selected balloon sails along its track"><img class="only-xray" src="img/loon-map-card-xray.svg" alt="Recreation with synthetic data of the air traffic map: balloons hold their positions by flying slow loops, headings turning and leading lines changing with speed, while the selected balloon sails along its track"></div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="step">
+    <div class="k"><b>Understand</b><span class="mono">The people</span></div>
+    <div class="txt">
+      <p>The people who decided whether Loon could fly were air traffic controllers and civil aviation authorities across South America. I worked with them in person and remotely, in Spanish.</p>
+      <p>Their tools are built around aircraft that turn and climb on command. A balloon has no engine to push it sideways. It sails the stratosphere’s layered winds, changing altitude to catch one blowing where it needs to go, along flight paths planned from wind forecasts. Controllers could request any change, so I explained the balloon’s limits and what an altitude off its planned winds does to its path.</p>
+    </div>
+    <div class="vis"></div>
+  </section>
+
+  <section class="step">
+    <div class="k"><b>Define</b><span class="mono">The problem</span></div>
+    <div class="txt"><p>Give controllers balloon positions they can verify, in a form they already know how to read.</p><p>I wrote down who it was for and what it had to do. It served more than 200 flight information regions, plus civil aviation, military and homeland-security agencies. It needed operational transparency, global flight tracking and current positions. The requirements covered flight information, flight paths and search, with browser compatibility and loading speed as the main fixes to the existing site.</p></div>
+    <div class="vis"></div>
+  </section>
+
+  <section class="step">
+    <div class="k"><b>Prototype</b><span class="mono">The build</span></div>
+    <div class="txt">
+      <p>I mocked up the full flow and reviewed it with air traffic control in Lima in July 2018, before writing any code: logging in, the landing page, flight search and the balloon tracker.</p><p>The balloon labels iterated within the review itself: from minimal green callsign blocks in the style of radar data blocks, to a richer card for each balloon. Each card draws the predicted flight path as circles that grow over time, so controllers see the forecast’s uncertainty rather than one confident line.</p><p>Then I designed and built the responsive web app, following the conventions of air traffic tools.</p>
+    </div>
+    <div class="vis seq" style="--ratio:2/1;--arrow-y:44%">
+      <figure><img src="img/loon-callsign-mock.jpg" alt="Earlier mock-up: balloons labeled with minimal green callsign blocks, and flight search"><figcaption>Before: minimal callsign blocks, reviewed with ATC Lima, 2018</figcaption></figure>
+      <figure><img src="img/loon-predicted-path-mock.jpg" alt="Later mock-up: a card for each balloon, and a predicted flight path drawn as growing circles"><figcaption>After: a card per balloon, with its predicted flight path</figcaption></figure>
+    </div>
+    <div class="vis">
+      <figure><div style="display:grid;grid-template-columns:10fr 3fr;gap:12px;align-items:end"><img src="img/loon-atc-recreation.svg" alt="Recreation of the air traffic website: a dark map with flight information region boundaries, balloon group and callsign tags, map controls, and a flight card"><img src="img/loon-atc-phone.svg" style="border:0;background:none" alt="The same recreation on a phone: map, tags and controls in a narrow layout"></div><figcaption>Recreation with synthetic data: the shipped site on a laptop and a phone</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="k"><b>Test</b><span class="mono">In daily use</span></div>
+    <div class="txt">
+      <p>Controllers used it to check balloon positions, which were more precise and more current than their radar. Many control centers kept it full screen on a TV, running around the clock. In smaller countries, controllers often had only a personal phone to check it on.</p>
+      <p>Access could also decide an agreement. Loon had spent years building its relationship with Cuba and explaining how it operated, and then the website became the sticking point: without it they couldn’t monitor the fleet, and wouldn’t sign. The site depended on Google and Firebase services that had to be allowlisted there, and I got that done within two weeks. Cuba signed a tentative memorandum of understanding. It didn’t grant blanket permission to fly through or land, so we kept the fleet out of Cuban airspace to avoid any risk of a landing there.</p>
+    </div>
+    <div class="vis"></div>
+  </section>
+
+  <section class="step last">
+    <div class="k"><b>Ship</b><span class="mono">The outcome</span></div>
+    <div class="txt"><p>Overflight approval came country by country across South America. Partners included ICAO, the FAA, NASA, the NTSB, the US Air Force and the Colombian Air Force.</p></div>
+    <div class="vis"></div>
+  </section>
+
+
+  <nav class="nextproj" aria-label="More case studies"><a href="luna.html"><span>Previous case study</span>Instrument Panel Keyboard</a><a href="platform.html" style="text-align:right"><span>Next case study</span>Data Visualization</a></nav>
+</div>
+</main>
+<script src="assets/site.js?v=e0057d1b64"></script>
+</body>
+</html>
