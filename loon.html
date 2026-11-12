@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/site.css?v=dc55f7992e">
+<link rel="stylesheet" href="assets/site.css?v=4d638f4632">
 <script>(function(){var t=null,ok=/^(light|dark|xray)$/,q=/[?&]theme=(light|dark|xray)\b/.exec(location.search);if(q)t=q[1];else{try{t=localStorage.getItem("theme")}catch(e){}}if(!ok.test(t))t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t;if(/[?&]embed\b/.test(location.search))document.documentElement.classList.add("embed")})()</script>
 
 </head>
@@ -42,18 +42,18 @@
 
   <section class="step">
     <div class="k"><b>Define</b><span class="mono">The problem</span></div>
-    <div class="txt"><p>Give controllers balloon positions they can verify, in a form they already know how to read.</p><p>I wrote down who it was for and what it had to do. It served more than 200 flight information regions, plus civil aviation, military and homeland-security agencies. It needed operational transparency, global flight tracking and current positions. The requirements covered flight information, flight paths and search, with browser compatibility and loading speed as the main fixes to the existing site.</p></div>
+    <div class="txt"><p>Give controllers balloon positions they can verify, in a form they already know how to read.</p><p>Its users were air traffic controllers and civil aviation authorities. They needed current positions, flight paths and search, and the old site needed better browser compatibility and loading speed.</p></div>
     <div class="vis"></div>
   </section>
 
   <section class="step">
     <div class="k"><b>Prototype</b><span class="mono">The build</span></div>
     <div class="txt">
-      <p>I mocked up the full flow and reviewed it with air traffic control in Lima in July 2018, before writing any code: logging in, the landing page, flight search and the balloon tracker.</p><p>The balloon labels iterated within the review itself: from minimal green callsign blocks in the style of radar data blocks, to a richer card for each balloon. Each card draws the predicted flight path as circles that grow over time, so controllers see the forecast’s uncertainty rather than one confident line.</p><p>Then I designed and built the responsive web app, following the conventions of air traffic tools.</p>
+      <p>I mocked up the full flow and reviewed it with air traffic control in Lima in July 2018, before writing any code: logging in, the landing page, flight search and the balloon tracker.</p><p>The mock-ups showed the balloon labels evolving from minimal green callsign blocks, in the style of radar data blocks, to a richer card for each balloon.</p><p>Then I designed and built the responsive web app, following the conventions of air traffic tools.</p>
     </div>
     <div class="vis seq" style="--ratio:2/1;--arrow-y:44%">
-      <figure><img src="img/loon-callsign-mock.jpg" alt="Earlier mock-up: balloons labeled with minimal green callsign blocks, and flight search"><figcaption>Before: minimal callsign blocks, reviewed with ATC Lima, 2018</figcaption></figure>
-      <figure><img src="img/loon-predicted-path-mock.jpg" alt="Later mock-up: a card for each balloon, and a predicted flight path drawn as growing circles"><figcaption>After: a card per balloon, with its predicted flight path</figcaption></figure>
+      <figure><img src="img/loon-callsign-mock.jpg" alt="Earlier mock-up: balloons labeled with minimal green callsign blocks, and flight search"><figcaption>Mock-up: minimal callsign blocks, reviewed with ATC Lima, 2018</figcaption></figure>
+      <figure><img src="img/loon-predicted-path-mock.jpg" alt="Later mock-up: a card for each balloon, with an early idea for a predicted path drawn as growing circles"><figcaption>Mock-up: a card per balloon</figcaption></figure>
     </div>
     <div class="vis">
       <figure><div style="display:grid;grid-template-columns:10fr 3fr;gap:12px;align-items:end"><img src="img/loon-atc-recreation.svg" alt="Recreation of the air traffic website: a dark map with flight information region boundaries, balloon group and callsign tags, map controls, and a flight card"><img src="img/loon-atc-phone.svg" style="border:0;background:none" alt="The same recreation on a phone: map, tags and controls in a narrow layout"></div><figcaption>Recreation with synthetic data: the shipped site on a laptop and a phone</figcaption></figure>
@@ -64,7 +64,7 @@
     <div class="k"><b>Test</b><span class="mono">In daily use</span></div>
     <div class="txt">
       <p>Controllers used it to check balloon positions, which were more precise and more current than their radar. Many control centers kept it full screen on a TV, running around the clock. In smaller countries, controllers often had only a personal phone to check it on.</p>
-      <p>Access could also decide an agreement. Loon had spent years building its relationship with Cuba and explaining how it operated, and then the website became the sticking point: without it they couldn’t monitor the fleet, and wouldn’t sign. The site depended on Google and Firebase services that had to be allowlisted there, and I got that done within two weeks. Cuba signed a tentative memorandum of understanding. It didn’t grant blanket permission to fly through or land, so we kept the fleet out of Cuban airspace to avoid any risk of a landing there.</p>
+      
     </div>
     <div class="vis"></div>
   </section>
@@ -79,6 +79,6 @@
   <nav class="nextproj" aria-label="More case studies"><a href="luna.html"><span>Previous case study</span>Instrument Panel Keyboard</a><a href="platform.html" style="text-align:right"><span>Next case study</span>Data Visualization</a></nav>
 </div>
 </main>
-<script src="assets/site.js?v=c06ac4cb03"></script>
+<script src="assets/site.js?v=c6fc7fbf01"></script>
 </body>
 </html>

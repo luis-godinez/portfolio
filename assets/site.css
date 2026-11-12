@@ -425,7 +425,7 @@ dialog.lightbox .close{position:absolute;top:14px;right:18px;font:inherit;font-f
    inside the sliding overlay, leaving trails of moving parts behind. */
 img[src*=".svg"]{will-change:transform;transform:translateZ(0)}
 
-.divider .role{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:4px 0 12px}
+.divider .role{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--text);margin:4px 0 12px}
 
 /* Off-screen cards skip rendering, so their animated drawings cost nothing until scrolled to */
 .cards .card,.flagships .fcard{content-visibility:auto;contain-intrinsic-size:auto 560px}

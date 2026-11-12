@@ -573,8 +573,8 @@
   // which it then holds without drawing again, its line full. A drawing waiting for its turn shows its finished frame,
   // still, with an empty line. The first turn goes to the drawing nearest the middle of the screen and the next to the
   // following unplayed one in reading order; a scroll hands the turn over only when another is clearly nearer the middle.
-  // Where there is hover, hovering or keyboard-focusing a drawing's card plays it at once, looping, and holds the turns
-  // until the pointer or focus leaves; a pass still running then carries on as the turn. A drawing scrolled fully off screen may
+  // Where there is hover, hovering or keyboard-focusing a drawing's card plays it at once, looping, and holds the turns until the
+  // pointer or focus leaves; a pass still running then carries on as the turn. A drawing scrolled fully off screen may
   // play again when it comes back. While a panel is open only its drawings take turns.
   var turns = null;
   if (inlining) turns = (function () {
@@ -742,7 +742,7 @@
     var watch = function (root) {
       list = list.filter(function (d) { if (d.parts[0].isConnected) return true; d.parts.forEach(function (p) { seen.unobserve(p); }); if (playing === d) playing = null; return false; });
       root.querySelectorAll('svg').forEach(function (svg) {
-        if (svg.drawn || svg.ownerSVGElement || svg.getAttribute('width') === '0' || svg.hasAttribute('data-loop')) return;   // nested svgs and the hidden host aren't shown; a looping drawing never takes turns
+        if (svg.drawn || svg.ownerSVGElement || svg.getAttribute('width') === '0' || svg.hasAttribute('data-loop')) return;   // nested svgs and the hidden host aren't shown
         if (!svg.querySelector(ANIMS)) return;
         svg.drawn = true;
         var loop = loopOf(svg), hold = holdOf(svg, loop);
@@ -791,7 +791,7 @@
         if (!svg.querySelector(ANIMS)) return;
         svg.drawn = true; svg.pauseAnimations(); svg.setCurrentTime(0);
         var loop = loopOf(svg);
-        if (!svg.hasAttribute('data-loop')) drawLine(svg, loop, holdOf(svg, loop));   // a drawing that loops for good has no pass to show
+        if (!svg.hasAttribute('data-loop')) drawLine(svg, loop, holdOf(svg, loop));
         track({ svg: svg, parts: [svg], on: false });
       });
       root.querySelectorAll('canvas[data-illus="platform"]').forEach(function (c) {

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/site.css?v=dc55f7992e">
+<link rel="stylesheet" href="assets/site.css?v=4d638f4632">
 <script>(function(){var t=null,ok=/^(light|dark|xray)$/,q=/[?&]theme=(light|dark|xray)\b/.exec(location.search);if(q)t=q[1];else{try{t=localStorage.getItem("theme")}catch(e){}}if(!ok.test(t))t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t;if(/[?&]embed\b/.test(location.search))document.documentElement.classList.add("embed")})()</script>
 
 </head>
@@ -46,9 +46,9 @@
   <section class="step">
     <div class="k"><b>Prototype</b><span class="mono">The build</span></div>
     <div class="txt">
-      <p>I started with a product requirements document and an audit of the tool as built: the four surfaces everything else hung on, what each one owned, and 14 inconsistencies between them, each flagged for cleanup. The planned path wasn’t going to deliver what was committed, so I took on the engineering myself.</p>
-      <p>I build through agentic development, which let me work in frameworks new to me. I rebuilt the tool end to end around one synchronized view: telemetry, plots, audio and video kept in sync, and 3D views of sensor data, all on one timeline, live or recorded.</p>
-      <p>Versioned releases with unit, integration and UI tests kept daily users unaffected while the tool changed underneath them.</p>
+      <p>I started with a product requirements document and an audit of the tool as built: the four surfaces everything else hung on, what each one owned, and 14 inconsistencies between them, each flagged for cleanup. To deliver what was committed, I took on the engineering myself.</p>
+      <p>I build through agentic development, which let me work in frameworks new to me. I rebuilt the tool end to end around one synchronized view: telemetry, plots, audio and video kept in sync, and 3D views of sensor data, all on one timeline, live or recorded. I split it into frameworks other apps could reuse.</p>
+      <p>Versioned releases, with unit, integration and UI tests where none had existed, kept daily users unaffected while the tool changed underneath them.</p>
     </div>
     <div class="vis wide"><figure><img class="only-light" src="img/platform-arch-light.svg" alt="Architecture, simplified: recordings and live device data are decoded off the main thread into one shared snapshot per tick, which every panel renders; one playback clock drives the playhead, audio and video, and seeks return to the clock on their own path" style="aspect-ratio:auto;object-fit:contain"><img class="only-dark" src="img/platform-arch.svg" alt="Architecture, simplified: recordings and live device data are decoded off the main thread into one shared snapshot per tick, which every panel renders; one playback clock drives the playhead, audio and video, and seeks return to the clock on their own path" style="aspect-ratio:auto;object-fit:contain"><img class="only-xray" src="img/platform-arch-xray.svg" alt="Architecture, simplified: recordings and live device data are decoded off the main thread into one shared snapshot per tick, which every panel renders; one playback clock drives the playhead, audio and video, and seeks return to the clock on their own path" style="aspect-ratio:auto;object-fit:contain"><figcaption>Simplified, with generic names</figcaption></figure></div>
   </section>
@@ -64,7 +64,7 @@
 
   <section class="step last">
     <div class="k"><b>Ship</b><span class="mono">The outcome</span></div>
-    <div class="txt"><p>More than 100 people across software and partner teams use it daily. Every change went through review by the codebase owner and senior engineers.</p></div>
+    <div class="txt"><p>More than 100 people across software and partner teams use it. The frameworks paid off beyond the tool: its 3D view became the base of a real-time 3D demo app that was running within a week. Every change went through review by the codebase owner and senior engineers.</p></div>
     <div class="vis"></div>
   </section>
 
@@ -77,6 +77,6 @@
   <nav class="nextproj" aria-label="More case studies"><a href="loon.html"><span>Previous case study</span>Air Traffic Website</a><a href="feedback.html" style="text-align:right"><span>Next case study</span>Data Annotation</a></nav>
 </div>
 </main>
-<script src="assets/site.js?v=c06ac4cb03"></script>
+<script src="assets/site.js?v=c6fc7fbf01"></script>
 </body>
 </html>
